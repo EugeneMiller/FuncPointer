@@ -3,7 +3,7 @@
 
 using namespace std;
 
-enum actions{MIN, MAX, AVG};
+enum actions{MIN, MAX, AVG};//hello
 
 //min
 int min(int** arr, size_t rows, size_t cols) {
