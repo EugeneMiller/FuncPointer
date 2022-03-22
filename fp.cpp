@@ -4,6 +4,7 @@
 using namespace std;
 
 enum actions{MIN, MAX, AVG};//hello
+//new line
 
 //min
 int min(int** arr, size_t rows, size_t cols) {
@@ -47,7 +48,7 @@ int avg(int** arr, size_t rows, size_t cols) {
 
 template <class T>
 T** create_matr(size_t rows, size_t cols) {
-	T** matr = new T * [rows];//создаём массив указателей на одномерные массивы
+	T** matr = new T * [rows];//Г±Г®Г§Г¤Г ВёГ¬ Г¬Г Г±Г±ГЁГў ГіГЄГ Г§Г ГІГҐГ«ГҐГ© Г­Г  Г®Г¤Г­Г®Г¬ГҐГ°Г­Г»ГҐ Г¬Г Г±Г±ГЁГўГ»
 	for (size_t i = 0; i < rows; i++)
 	{
 		matr[i] = new T[cols];
@@ -57,7 +58,7 @@ T** create_matr(size_t rows, size_t cols) {
 
 template <typename T>
 void delete_matr(T** matr, size_t rows) {
-	//сначала удаляем данные внутри строк
+	//Г±Г­Г Г·Г Г«Г  ГіГ¤Г Г«ГїГҐГ¬ Г¤Г Г­Г­Г»ГҐ ГўГ­ГіГІГ°ГЁ Г±ГІГ°Г®ГЄ
 	for (size_t i = 0; i < rows; i++)
 	{
 		delete[] matr[i];
@@ -91,7 +92,7 @@ void show_matr(T** matr, size_t rows, size_t cols) {
 }
 
 int Action(int** matr, size_t rows, size_t cols, int (*act) (int**, size_t, size_t)) {
-	return act(matr, rows, cols);//вызывыем одну из функций
+	return act(matr, rows, cols);//ГўГ»Г§Г»ГўГ»ГҐГ¬ Г®Г¤Г­Гі ГЁГ§ ГґГіГ­ГЄГ¶ГЁГ©
 }
 
 int main() {
@@ -102,7 +103,7 @@ int main() {
 	int** mat;
 	int choice{ 3 };
 
-	int (*act[3]) (int**, size_t, size_t) = {min, max, avg}; //указатель на одну из функций (min, max или avg)
+	int (*act[3]) (int**, size_t, size_t) = {min, max, avg}; //ГіГЄГ Г§Г ГІГҐГ«Гј Г­Г  Г®Г¤Г­Гі ГЁГ§ ГґГіГ­ГЄГ¶ГЁГ© (min, max ГЁГ«ГЁ avg)
 
 	srand(time(NULL));
 	mat = create_matr<int>(R, C);
